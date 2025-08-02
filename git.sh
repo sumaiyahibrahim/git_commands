@@ -38,3 +38,11 @@ git merge new-branch  # Merge changes from new-branch into the current branch (w
 git branch -m old-branch new-branch  # Rename a branch
 git switch branch-name    # Switch to branch using switch (recommended)
 
+# Checklist to push code to GitHub:
+# 1. Make sure you have a remote set: git remote -v
+#    If not, add one: git remote add origin https://github.com/username/repo.git
+# 2. Commit your changes: git commit -m "your message"
+# 3. Switch to the correct branch: git switch main
+# 4. Push your code: git push origin main
+# 5. If pushing for the first time: git push --set-upstream origin main
+
