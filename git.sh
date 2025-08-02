@@ -35,3 +35,4 @@ git checkout -b new-branch  # Create and switch to a new branch
 git branch -d new-branch  # Delete a branch
 git branch -D new-branch  # Force delete a branch
 git merge new-branch  # Merge changes from new-branch into the current branch (we have to be on the branch we want to merge into)
+
