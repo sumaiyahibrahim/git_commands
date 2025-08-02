@@ -1,57 +1,26 @@
-# Initialize a new Git repository in the current directory
-git init
-
-# Show the current status of files (staged, modified, untracked)
-git status
-
-# Stage all files in the directory
-git add .
-
-# Stage a specific file
-git add filename.txt
-
-# Unstage a specific file (keep changes in working directory)
-git restore --staged filename.txt
-
-# Remove a file from the staging area (preserve it locally)
-git rm --cached filename.txt
-
-# Remove a file from both Git and the local file system (forcefully)
-git rm -f filename.txt
-
-# Remove a file from Git and the local file system (normal delete)
-git rm filename.txt
-
-# Commit staged changes with a commit message
-git commit -m "Your commit message here"
-
-# Rename or move a file (Git tracks it as a rename)
-git mv oldname.txt newname.txt
-
-# View the commit history
-git log
-
-# View unstaged changes in the working directory
-git diff filename.txt
-
-# Restore a deleted file (before commit)
-git restore filename.txt
-
-# Restore all deleted/modified files in working directory
-git restore .
-
-# Restore a file from the previous commit (HEAD^)
-git checkout HEAD^ -- filename.txt
-
-# Restore a file from a specific commit hash
-git checkout <commit-id> -- filename.txt
-# Example: git checkout a1b2c3d4 -- filename.txt
-
-# Unstage all staged files
-git reset
-
-# Undo all changes in working directory (discard modifications)
-git restore .
+git init  # Initialize a new Git repository in the current directory
+git status  # Check the status of the repository (staged, unstaged, untracked files)
+git add .  # Stage all changes (new, modified, deleted files)
+git add filename.txt  # Stage a specific file
+git restore --staged filename.txt  # Unstage a specific file (keep changes in working directory)
+git rm --cached filename.txt  # Remove a file from staging area (keep it in working directory)
+git rm -f filename.txt  # Force remove a file from staging area (keep it in working directory)
+git rm filename.txt  # Remove a file from staging area and working directory
+git commit -m "Your commit message here"  # Commit staged changes with a message
+git mv oldname.txt newname.txt  # Rename a file and stage the change
+git log  # View commit history
+git diff filename.txt  # Show differences in a specific file
+git diff  # Show differences in all files
+git restore filename.txt  # Restore a specific file to the last committed state
+git restore .  # Restore all files to the last committed state
+git checkout HEAD^ -- filename.txt  # Restore a file to the state of the previous commit
+git checkout <commit-id> -- filename.txt  # Restore a file to the state of a specific commit
+            # Note: Replace <commit-id> with the actual commit hash
+            # Example: git checkout a1b2c3d4 -- filename.txt
+git reset  # Reset the staging area to the last commit (keep changes in working directory)
+git reset --hard  # Reset the staging area and working directory to the last commit (discard
+git restore . # Restore all files to the last committed state
+gitignore filename.txt  # Ignore a specific file (add to .gitignore)
 
 # GIT BRANCH 
 # A branch is a light weight movable pointer to a commit
@@ -65,3 +34,15 @@ git checkout new-branch  # Switch to the new branch
 git checkout -b new-branch  # Create and switch to a new branch
 git branch -d new-branch  # Delete a branch
 git branch -D new-branch  # Force delete a branch
+git merge new-branch  # Merge changes from new-branch into the current branch (we have to be on the branch we want to merge into)
+git branch -m old-branch new-branch  # Rename a branch
+git switch branch-name    # Switch to branch using switch (recommended)
+
+# Checklist to push code to GitHub:
+# 1. Make sure you have a remote set: git remote -v
+#    If not, add one: git remote add origin https://github.com/username/repo.git
+# 2. Commit your changes: git commit -m "your message"
+# 3. Switch to the correct branch: git switch main
+# 4. Push your code: git push origin main
+# 5. If pushing for the first time: git push --set-upstream origin main
+
