@@ -63,3 +63,5 @@ git branch          # List all branches
 git branch new-branch  # Create a new branch
 git checkout new-branch  # Switch to the new branch
 git checkout -b new-branch  # Create and switch to a new branch
+git branch -d new-branch  # Delete a branch
+git branch -D new-branch  # Force delete a branch
